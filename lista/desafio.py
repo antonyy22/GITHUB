@@ -8,4 +8,4 @@ lista = [num1, num2,num3,num4,num5]
 maior= max(lista)
 menor= min (lista)
 media= (num1+num2+num3+num4+num5/5)
-print("O maior numero é", maior, "o menor numero digitado é", menor, "e a media desses numeros é", media) 
+print("O maior numero é", maior, "o menor numero digitado é", menor, "e a media desses numeros é", media)
