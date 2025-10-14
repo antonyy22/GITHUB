@@ -6,4 +6,4 @@ for i in a:
 
 tuplafinal= tuple(numeros)
 print (*tuplafinal)
-print(type(tuplafinal))
+print(type(tuplafinal)) 
