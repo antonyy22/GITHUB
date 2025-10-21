@@ -15,4 +15,4 @@ for palavras in palavra:
     chave =f'qt' - {len(palavra)}
     valor= len(palavra)
 
-    qt.update\()
+    qt.update
