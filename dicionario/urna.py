@@ -1,40 +1,41 @@
+opcao= -1
+candidatos= []
+senha_encerrar= []
+encerrar_votacao= 1900
+contagem_votos =     []
 
-candidatos= ('Ralph Inacio 13', 'Joao Cruz 22', 'Roberto Carlos 7', 'Dilma Trump 24')
-cann= {}
-votusnulos= {}
-opcao=-1
-while (opcao !=0):
-    opcao= int (input('O que deseja fazer?  \n'
-                      'Opção 1: Votar em um presidente \n'
-                      'Opção 2: Votar nulo \n'
-                      'Opção 3: Cadastrar um presidente \n' 
-                      'Opção 4: Mostrar ganhador \n'
-                      'Opção 0: Sair \n\n'
-                      'Opção -> '))
-    if opcao ==3:
-        can= len(cann) +1
-        Candidatoscadastrados= {}
-        nome_presidente= input("Informe o nome do Presidente e o numero do presidente -> ")               
-        Candidatoscadastrados.update({'nome': nome_presidente,})
-        cann.update ({can: Candidatoscadastrados})
-        print ()
-    elif opcao==1:
-        print ('Os presidentes são', candidatos, cann)
-        votacao= input("Me diga o numero do candidato ")
-        print ('Voto confirmado')
-        votos_= {}
-        votos_.update({votacao})
-    elif opcao==2:
-        votus= len(votusnulos) +1
-        votosnulos={}
-        nulos= input("Para votar nulo digite o numero 0 ")
-        votosnulos.update({nulos})
-        votusnulos.update({votus :votosnulos})
-    elif opcao== 4:
-        ganhador= 0
-        vencedor= 0
+while opcao!=senha_encerrar:
+    opcao= input("O que deseja fazer? \n"  
+                  "Opção 1: Cadastrar candidato \n"
+                   "Opção 0: Sair \n"
+                    "Opção -> "     )
+    
+    if opcao.isdigit():
+        opcao= int (opcao)
+
+
+        if opcao==1:
+            qtd_candidatos= int (input("Quantos candidatos deseja cadastrar? "))
+            for c in range (1,qtd_candidatos+1):
+                candidato=[]
+                nome= input(f'Nome do candidato {c} -> ')
+                num_candidato= int (input(f"Numero do candidato {c}-> "))
+
+                candidato.append(nome)
+                candidato.append(num_candidato)
+                candidatos.append(tuple(candidato))
+             
+
+            print ('\n\n')
         
-        for vencedor, ganhador in votos_.items():
-
-
-        
+        elif opcao==2:
+            voto= -1
+            while voto != encerrar_votacao:
+                for candidato in candidatos:
+                    print (f'Candidato {candidato(0)} | Numero {candidato(1)}')
+                voto= int (input("Vote no numero de um candidato ->"))
+                for candidato in candidatos:
+                    if voto ==candidato[1]:
+                        if candidato[0] not in contagem_votos:
+                            contagem_votos.updat ({candidato{0}:1})
+                            break
