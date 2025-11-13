@@ -12,4 +12,4 @@ def gerar_logs():
 def main ():
     gerar_logs()
 
-main ()
+main () 
